@@ -1,33 +1,27 @@
 import Koa from 'koa';
 import Router from '@koa/router';
+import serve from 'koa-static';
 import cors from '@koa/cors';
-import fetch from 'isomorphic-fetch';
+import _fetch from 'isomorphic-fetch';
 
 const app = new Koa();
-const router = new Router();
-const port = 3011;
+const port = 3002;
+const _ = new Router();
+const array_size = 10;
 
-app.use(cors({origin: '*'}));
+app.use(cors({ origin: '*' }));
 
-router.get('/', (ctx) => {
-	ctx.body = 'hello!';
+_.get('/:breed', ctx => {
+	const type = ctx.params.breed;
+	ctx.state.dog_type = type;
+	_fetch(`https://dog.ceo/api/breed/${type}/images/random`)
+		.then(res => {
+			ctx.state.image = res.json().message;
+		});
 });
 
-app.use(async (ctx, next) => {
-	await next();
-	const rt = ctx.response.get('X-Response-Time');
-	console.log(`${ctx.method} ${ctx.url} - ${rt}`);
-});
+app.use(_.routes());
 
-app.use(async (ctx, next) => {
-	const start = Date.now();
-	await next();
-	const ms = Date.now() - start;
-	ctx.set('X-Response-Time', `${ms}ms`);
-});
+app.use(serve('./public'));
 
-app.use(router.routes());
-
-app.listen(port, () => {
-	console.log(`Server running on http://localhost:${port}`);
-});
+app.listen(port);
