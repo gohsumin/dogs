@@ -13,38 +13,11 @@
     </form>
     <div class="breed-list-container my-1">
         <div class="breed-list gap-2">
-            <a href="/add" class="breed-btn">Add</a>
-            <a href="/add" class="breed-btn">Thing...</a>
-            <a href="/add" class="breed-btn">More</a>
-            <a href="/add" class="breed-btn">Stuff</a>
-            <a href="/add" class="breed-btn">Add</a>
-            <a href="/add" class="breed-btn">Thing...</a>
-            <a href="/add" class="breed-btn">More</a>
-            <a href="/add" class="breed-btn">Stuff</a>
-            <a href="/add" class="breed-btn">Add</a>
-            <a href="/add" class="breed-btn">Thing...</a>
-            <a href="/add" class="breed-btn">More</a>
-            <a href="/add" class="breed-btn">Stuff</a>
-            <a href="/add" class="breed-btn">Add</a>
-            <a href="/add" class="breed-btn">Thing...</a>
-            <a href="/add" class="breed-btn">More</a>
-            <a href="/add" class="breed-btn">Stuff</a>
-            <a href="/add" class="breed-btn">Add</a>
-            <a href="/add" class="breed-btn">Thing...</a>
-            <a href="/add" class="breed-btn">More</a>
-            <a href="/add" class="breed-btn">Stuff</a>
-            <a href="/add" class="breed-btn">Add</a>
-            <a href="/add" class="breed-btn">Thing...</a>
-            <a href="/add" class="breed-btn">More</a>
-            <a href="/add" class="breed-btn">Stuff</a>
-            <a href="/add" class="breed-btn">Add</a>
-            <a href="/add" class="breed-btn">Thing...</a>
-            <a href="/add" class="breed-btn">More</a>
-            <a href="/add" class="breed-btn">Stuff</a>
-            <a href="/add" class="breed-btn">Add</a>
-            <a href="/add" class="breed-btn">Thing...</a>
-            <a href="/add" class="breed-btn">More</a>
-            <a href="/add" class="breed-btn">Stuff</a>
+            <% breeds.forEach((item) => { %>
+                <a class="breed-btn" href="/<%- item %>">
+                    <%= item %>
+                </a>
+            <% }); %>
         </div>
         <div class="breed-list-fade-1"></div>
         <div class="breed-list-fade-2"></div>
