@@ -1,16 +1,52 @@
-<nav class="border navbar navbar-light bg-light my-0">
+<nav class="navbar navbar-light vw-100">
     <div class="container-fluid px-5 py-2 justify-content-start">
+        <img class="icon" src="/assets/icon.png" alt="">
         <a class="navbar-brand">BORED DOG</a>
         <span class="navbar-text">Get a dog and something to do.</span>
     </div>
     <form action="/" method="POST" class="container-fluid mx-0">
         <div class="input-group">
-            <span class="input-group-text px-4" id="basic-addon1">🔎</span>
-            <input name="breed" class="form-control py-3" type="search" placeholder="" aria-label="breed">
-            <input type="submit" value="Search" class="btn btn-dark btn-sm">
+            <span class="input-group-text px-3" id="basic-addon1">🔎</span>
+            <input name="breed" value="<%= prevSearch %>" class="form-control py-3" type="search" id="search-bar"
+                placeholder="" aria-label="breed">
         </div>
     </form>
-    <div class="container-fluid justify-content-center my-4">
-        <a href="/add" class="btn btn-sm btn-dark">Button to /add...</a>
+    <div class="breed-list-container my-1">
+        <div class="breed-list gap-2">
+            <a href="/add" class="breed-btn">Add</a>
+            <a href="/add" class="breed-btn">Thing...</a>
+            <a href="/add" class="breed-btn">More</a>
+            <a href="/add" class="breed-btn">Stuff</a>
+            <a href="/add" class="breed-btn">Add</a>
+            <a href="/add" class="breed-btn">Thing...</a>
+            <a href="/add" class="breed-btn">More</a>
+            <a href="/add" class="breed-btn">Stuff</a>
+            <a href="/add" class="breed-btn">Add</a>
+            <a href="/add" class="breed-btn">Thing...</a>
+            <a href="/add" class="breed-btn">More</a>
+            <a href="/add" class="breed-btn">Stuff</a>
+            <a href="/add" class="breed-btn">Add</a>
+            <a href="/add" class="breed-btn">Thing...</a>
+            <a href="/add" class="breed-btn">More</a>
+            <a href="/add" class="breed-btn">Stuff</a>
+            <a href="/add" class="breed-btn">Add</a>
+            <a href="/add" class="breed-btn">Thing...</a>
+            <a href="/add" class="breed-btn">More</a>
+            <a href="/add" class="breed-btn">Stuff</a>
+            <a href="/add" class="breed-btn">Add</a>
+            <a href="/add" class="breed-btn">Thing...</a>
+            <a href="/add" class="breed-btn">More</a>
+            <a href="/add" class="breed-btn">Stuff</a>
+            <a href="/add" class="breed-btn">Add</a>
+            <a href="/add" class="breed-btn">Thing...</a>
+            <a href="/add" class="breed-btn">More</a>
+            <a href="/add" class="breed-btn">Stuff</a>
+            <a href="/add" class="breed-btn">Add</a>
+            <a href="/add" class="breed-btn">Thing...</a>
+            <a href="/add" class="breed-btn">More</a>
+            <a href="/add" class="breed-btn">Stuff</a>
+        </div>
+        <div class="breed-list-fade-1"></div>
+        <div class="breed-list-fade-2"></div>
     </div>
 </nav>
