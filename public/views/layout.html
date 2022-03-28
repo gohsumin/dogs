@@ -11,8 +11,31 @@
     <title>DOGS</title>
 </head>
 
-<body">
+<body>
     <%- body %>
 </body>
+<script>
+    let breedList = document.getElementById('breed-list');
+    breedList.scrollLeft = "<%= scrollLeft %>";
+    let searchForm = document.getElementById('search-form');
+    let searchBar = document.getElementById('search-bar');
+    let breedBtns = document.getElementsByClassName('breed-btn');
+    function getScroll() {
+        return breedList.scrollLeft;
+    }
+    searchForm.addEventListener('submit', event => {
+        const scrollLeft = getScroll();
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                breed: searchBar.ariaValueText,
+                scrollLeft: scrollLeft
+            })
+        }).then(res => {
+            console.log("success");
+        });
+    })
+</script>
 
 </html>

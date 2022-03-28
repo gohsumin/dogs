@@ -1,18 +1,18 @@
-<nav class="navbar navbar-light vw-100">
+<nav class="navbar navbar-light vw-100 py-0">
     <div class="container-fluid px-5 py-2 justify-content-start">
         <img class="icon" src="/assets/icon.png" alt="">
         <a class="navbar-brand">BORED DOG</a>
         <span class="navbar-text">Get a dog and something to do.</span>
     </div>
-    <form action="/" method="POST" class="container-fluid mx-0">
+    <form id="search-form" class="container-fluid mx-0">
         <div class="input-group">
             <span class="input-group-text px-3" id="basic-addon1">🔎</span>
             <input name="breed" value="<%= prevSearch %>" class="form-control py-3" type="search" id="search-bar"
                 placeholder="" aria-label="breed">
         </div>
     </form>
-    <div class="breed-list-container my-1">
-        <div class="breed-list gap-2">
+    <div class="breed-list-container">
+        <div id="breed-list" class="gap-2">
             <% breeds.forEach((item) => { %>
                 <a class="breed-btn" href="/<%- item %>">
                     <%= item %>
