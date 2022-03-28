@@ -4,11 +4,11 @@
         <a class="navbar-brand">BORED DOG</a>
         <span class="navbar-text">Get a dog and something to do.</span>
     </div>
-    <form id="search-form" class="container-fluid mx-0">
+    <form name="breed-form" action="/" method="POST" id="search-form" class="container-fluid mx-0">
         <div class="input-group">
             <span class="input-group-text px-3" id="basic-addon1">🔎</span>
-            <input name="breed" value="<%= prevSearch %>" class="form-control py-3" type="search" id="search-bar"
-                placeholder="" aria-label="breed">
+            <input name="breed" class="form-control py-3" type="search" id="search-bar"
+                placeholder="" aria-label="breed" value="<%= prevSearch %>">
         </div>
     </form>
     <div class="breed-list-container">
