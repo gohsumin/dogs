@@ -17,36 +17,53 @@
 </body>
 
 <script>
-    // window.onload = function () {
-
-    let form = document.getElementById('search-form');
     let breedList = document.getElementById('breed-list');
     breedList.scrollLeft = "<%= scrollLeft %>";
 
-    if (form.addEventListener) {
-        form.addEventListener("submit", submitted, false);
-    } else if (form.attachEvent) {
-        form.attachEvent('onsubmit', submitted);
+    let searchForm = document.getElementById('search-form');
+
+    if (searchForm.addEventListener) {
+        searchForm.addEventListener("submit", onFormSubmit, false);
+    } else if (searchForm.attachEvent) {
+        searchForm.attachEvent('onsubmit', onFormSubmit);
     }
 
-    function submitted() {
+    function onFormSubmit() {
         const scrollLeft = breedList.scrollLeft;
-        console.log(scrollLeft);
         input = document.createElement('input');
         input.setAttribute('name', 'scrollLeft');
         input.setAttribute('value', scrollLeft);
         input.setAttribute('type', 'hidden');
-        form.appendChild(input);
+        searchForm.appendChild(input);
         return true;
     }
-    // };
 
+    let breedBtns = document.getElementsByName('breed-btn-form');
+
+    breedBtns.forEach((breedBtn) => {
+        function onBtnClick() {
+            const scrollLeft = breedList.scrollLeft;
+            input = document.createElement('input');
+            input.setAttribute('name', 'scrollLeft');
+            input.setAttribute('value', scrollLeft);
+            input.setAttribute('type', 'hidden');
+            breedBtn.appendChild(input);
+            return true;
+        }
+        if (breedBtn.addEventListener) {
+            breedBtn.addEventListener("click", onBtnClick, false);
+        }
+        else if (breedBtn.attachEvent) {
+            breedBtn.attachEvent("onclick", onBtnClick);
+        }
+    });
+
+    // to prevent flash of unstyled content (for scroll location adjustment) //
     let domReady = (cb) => {
         document.readyState === 'interactive' || document.readyState === 'complete'
             ? cb()
             : document.addEventListener('DOMContentLoaded', cb);
     };
-
     domReady(() => {
         // Display body when DOM is loaded
         document.body.style.visibility = 'visible';
