@@ -1,18 +1,16 @@
-<div class="d-flex flex-column align-items-center gap-4 justify-content-start vh-100">
-    <div class="row">
-        <% include partials/_navbar.html %>
-    </div>
-    <div class="container row flex-fill flex-grow-1 flex-column">
+<div class="d-flex flex-column align-items-center gap-4 justify-content-start vw-100 vh-100">
+    <% include partials/_navbar.html %>
+        <div class="container row flex-fill flex-grow-1 flex-column">
 
-        <div class="dog-activity-container">
-            <div>
-                <p class="title">An Idea:</p>
-                <img class="dog-image" src="<%= image %>">
+            <div class="dog-activity-container">
+                <div>
+                    <p class="title">An Idea:</p>
+                    <img class="dog-image" src="<%= image %>">
+                </div>
+                <p class="activity">
+                    <%= activity %> with your <%= breed %>
+                </p>
             </div>
-            <p class="activity">
-                <%= activity %> with your <%= breed %>
-            </p>
-        </div>
 
-    </div>
+        </div>
 </div>
