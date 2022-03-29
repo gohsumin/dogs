@@ -1,0 +1,214 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #cebebe;
+}
+
+.container {
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+nav.navbar {
+    height: min-content;
+    width: 100%;
+    margin-top: 4px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #cebebe;
+}
+
+.index-container {
+    margin-top: 25vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+}
+
+@media (max-width: 750px) {
+    .index-container {
+        width: 100%;
+    }
+}
+
+a.brand-name {
+    margin-right: 12px;
+    font-size: 24px;
+    text-emphasis: none;
+    text-decoration: none;
+    color: white;
+}
+
+a.brand-name:hover {
+    color: #F8F3F2;
+    text-shadow: -1px -1px 12px white;
+}
+
+.brand-slogan {
+    font-size: 16px;
+    color: #987171;
+}
+
+.brand-slogan:hover {
+    color: #F6F3F3;
+}
+
+img.icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 4px;
+    margin-left: -6px;
+}
+
+p.title {
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-size: 40px;
+    font-weight: 300;
+    color: #977575;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 8px;
+    margin-bottom: 0px;
+    width: fit-content;
+}
+
+p.title:hover {
+    color: #B75279;
+}
+
+div.dog-activity-container {
+    display: flex;
+    margin-top: 8vh;
+    flex-direction: row;
+    align-self: center;
+    align-items: flex-end;
+    justify-content: center;
+    width: fit-content;
+}
+
+img.dog-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+@media (max-width: 550px) {
+    img.dog-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+p.activity {
+    width: 160px;
+    height: 95%;
+    padding-top: 40px;
+    margin-bottom: 0;
+    display: flex;
+    text-align: end;
+    margin-left: 12px;
+    padding-left: 4px;
+    padding-right: 10px;
+    border-left: 0.5px solid #987171;
+    font-size: 22px;
+    font-weight: 200;
+    color: #987171;
+    align-content: center;
+    align-items: center;
+}
+
+@media (max-width: 550px) {
+    p.activity {
+        width: 150px;
+        font-size: 20px;
+    }
+}
+
+p.activity:hover {
+    color: #B75279;
+    font-weight: 400;
+}
+
+.input-group-text {
+    border: none;
+}
+
+.form-control {
+    border: none;
+}
+
+div.breed-list-container {
+    position: relative;
+    margin: auto;
+    height: 50px;
+    width: 92%;
+}
+
+div#breed-list {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+div#breed-list::-webkit-scrollbar {
+    display: none
+}
+
+input.breed-btn {
+    border: none;
+    align-self: center;
+    justify-self: center;
+    /* border: 1px solid gray; */
+    box-shadow: 0px 0px 2px 0.5px rgba(0, 0, 0, 0.2);
+    background-color: #825E5E;
+    padding: 2px 4px 2px 4px;
+    text-decoration: none;
+    font: 300;
+    font-size: small;
+    color: #F8F3F2;
+    border-radius: 10px;
+}
+
+div.breed-list-fade-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -1px;
+    width: 20px;
+    height: 100%;
+    background-image: linear-gradient(to right, #cebebe, #cebebe00);
+}
+
+div.breed-list-fade-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -1px;
+    width: 20px;
+    height: 100%;
+    background-image: linear-gradient(to left, #cebebe, #cebebe00);
+}
+
+div.not-found {
+    width: fit-content;
+    align-self: center;
+    color: gray;
+}
+
+/* to prevent flash of unstyled content */
+html {
+    visibility: visible;
+    opacity: 1;
+}

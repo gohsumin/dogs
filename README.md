@@ -4,6 +4,14 @@ This project is a Node.js web server using the Koa framework. There is also a
 plain web page that has already been written, located in `/public`, which will
 be the UI.
 
+## How to run
+
+To get the server running on localhost:3011:
+    
+```sh
+npm start
+```
+
 ## Getting started
 
 You will need to install Node.js.
