@@ -12,7 +12,6 @@ import serve from 'koa-static';
 
 const app = new Koa();
 const router = new KoaRouter();
-const things = ["peace", "dream", "love"];
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 let prevSearch = "";
@@ -111,14 +110,9 @@ async function notFound(ctx) {
 
 // return random image url for the dog breed
 async function getImage(breed) {
-    try {
-        const res = await fetch(`https://dog.ceo/api/breed/${breed}/images/random`);
-        const json = await res.json();
-        return json;
-    }
-    catch (err) {
-        return new Error(err);
-    }
+	const res = await fetch(`https://dog.ceo/api/breed/${breed}/images/random`);
+	const json = await res.json();
+	return json;
 }
 
 // return random activity
