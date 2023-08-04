@@ -149,4 +149,4 @@ app.use(serve(__dirname + '/public'));
 // middleware for routing
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(3011, () => console.log('Server started at http://localhost:3011'));
+app.listen(process.env.PORT||3011, '0.0.0.0');
