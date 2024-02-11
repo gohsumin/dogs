@@ -11,6 +11,13 @@ body {
 	justify-content: center;
 }
 
+@media screen and (max-width: 400px) {
+	.container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
 nav.navbar {
 	height: min-content;
 	width: 100%;
@@ -82,6 +89,8 @@ p.title:hover {
 	position: relative;
 	width: fit-content;
 	height: fit-content;
+	min-width: 264px;
+	min-height: 264px;
 }
 
 img.dog-image {
@@ -107,10 +116,12 @@ img.dog-image {
 	33% {
 		--bg2: #d7ffc6;
 	}
+
 	66% {
 		--bg1: #ff92b2;
 		--bg2: #fbf8f8;
 	}
+
 	99% {
 		--bg1: #fbf8f8;
 	}
@@ -123,14 +134,14 @@ img.dog-image {
 	position: absolute;
 	font-size: 38px;
 	font-weight: 500;
-	text-shadow: 0 0 4px rgba(255, 252, 250, 0.4);
 	background: linear-gradient(45deg, var(--bg1), var(--bg2));
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	backdrop-filter: brightness(0.8) contrast(0.9);
 	text-align: center;
 	text-wrap: balance;
-	inset: 0.5rem 0.75rem 1rem 0.75rem;
+	inset: 0;
 	font-style: italic;
 	font-family: ui-serif;
 	animation-name: rainbow-shine;
@@ -139,13 +150,19 @@ img.dog-image {
 	animation-timing-function: ease-in-out;
 }
 
+@media screen and (max-width: 450px) {
+	.activity {
+		font-size: 32px;
+	}
+}
+
 .breed {
 	position: absolute;
 	bottom: 6px;
 	left: 50%;
 	transform: translateX(-50%);
 	background-color: rgba(50, 45, 42, 0.2);
-	font-size: 17px;
+	font-size: 13px;
 	padding: 3px 8px;
 	line-height: 1.1;
 	color: lightgray;
