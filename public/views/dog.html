@@ -1,13 +1,15 @@
 <div class="d-flex flex-column align-items-center gap-4 justify-content-start vh-100">
-    <% include partials/_navbar.html %>
-        <div class="container row flex-fill flex-grow-1 flex-column">
-
-            <div class="dog-activity-container">
-				<p class="activity">
-					<%= activity %> with your <%= breed %>
-                </p>
+	<% include partials/_navbar.html %>
+		<div class="container">
+			<div class="dog-activity-container">
+				<div class="activity">
+					<%= activity %>
+				</div>
+				<div class="breed">
+					<%= breed %>
+				</div>
 				<img class="dog-image" src="<%= image %>">
-            </div>
+			</div>
 
-        </div>
+		</div>
 </div>
