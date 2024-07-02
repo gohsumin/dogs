@@ -1,29 +1,38 @@
 body {
-	background-color: #f6f4f4;
+	background-color: #faf9f9;
 }
 
 .container {
 	display: flex;
+	gap: 1rem;
 	height: 100%;
-	background-color: white;
+	overflow: auto;
 	padding: 2rem;
-	max-width: none;
-	justify-content: center;
+	max-width: 80rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 512px) {
 	.container {
 		padding-left: 0;
 		padding-right: 0;
 	}
 }
 
-nav.navbar {
+.navbar {
 	height: min-content;
 	width: 100%;
 	margin-top: 4px;
 	padding-left: 30px;
 	padding-right: 30px;
+	box-shadow: 0 2px 8px -8px;
+	gap: 2px;
+}
+
+@media screen and (max-width: 512px) {
+	.navbar {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .index-container {
@@ -42,32 +51,32 @@ nav.navbar {
 	}
 }
 
-a.brand-name {
+.brand-name {
 	margin-right: 12px;
 	font-size: 24px;
 	text-emphasis: none;
 	text-decoration: none;
-	color: #987171;
+	color: #765151;
 }
 
-a.brand-name:hover {
+.brand-name:hover {
 	filter: brightness(1.2);
 	text-shadow: -1px -1px 12px white;
 }
 
 .brand-slogan {
 	font-size: 16px;
-	color: #987171;
+	color: #928080;
 }
 
-img.icon {
+.icon {
 	width: 36px;
 	height: 36px;
 	margin-right: 4px;
 	margin-left: -6px;
 }
 
-p.title {
+.title {
 	letter-spacing: 2px;
 	word-spacing: 2px;
 	font-size: 40px;
@@ -80,80 +89,73 @@ p.title {
 	width: fit-content;
 }
 
-p.title:hover {
+.title:hover {
 	color: #B75279;
 }
 
-.dog-activity-container {
+.dog-image-container {
 	display: flex;
 	position: relative;
-	width: fit-content;
-	height: fit-content;
-	min-width: 264px;
-	min-height: 264px;
+	flex-grow: 1;
+	width: 100%;
+	height: calc(100% - 1rem);
+	justify-content: center;
+	overflow: hidden;
 }
 
-img.dog-image {
+.dog-image {
 	display: flex;
-	width: 100%;
+	object-fit: contain;
 	height: 100%;
-	object-fit: cover;
 }
 
 @property --bg1 {
 	syntax: "<color>";
 	inherits: false;
-	initial-value: #fbf8f8;
+	initial-value: #70398b;
 }
 
 @property --bg2 {
 	syntax: "<color>";
 	inherits: false;
-	initial-value: #fbf8f8;
+	initial-value: #af693e;
 }
 
 @keyframes rainbow-shine {
 	33% {
-		--bg2: #d7ffc6;
+		--bg2: #63984c;
 	}
 
 	66% {
-		--bg1: #ff92b2;
-		--bg2: #fbf8f8;
+		--bg1: #ad677c;
+		--bg2: #519894;
 	}
 
 	99% {
-		--bg1: #fbf8f8;
+		--bg1: #6e6d06;
 	}
 }
 
 .activity {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	font-size: 38px;
+	width: fit-content;
+	height: fit-content;
+	font-size: 1.75rem;
+	line-height: 1.2;
 	font-weight: 500;
 	background: linear-gradient(45deg, var(--bg1), var(--bg2));
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	backdrop-filter: brightness(0.8) contrast(0.9);
 	text-align: center;
 	text-wrap: balance;
-	inset: 0;
 	font-style: italic;
 	font-family: ui-serif;
+	z-index: 1;
 	animation-name: rainbow-shine;
 	animation-duration: 6s;
 	animation-iteration-count: infinite;
 	animation-timing-function: ease-in-out;
-}
-
-@media screen and (max-width: 450px) {
-	.activity {
-		font-size: 32px;
-	}
 }
 
 .breed {
@@ -161,12 +163,23 @@ img.dog-image {
 	bottom: 6px;
 	left: 50%;
 	transform: translateX(-50%);
-	background-color: rgba(50, 45, 42, 0.2);
-	font-size: 13px;
+	background-color: #e8e4e1aa;
+	font-size: 1rem;
 	padding: 3px 8px;
 	line-height: 1.1;
-	color: lightgray;
+	color: #424242;
 	text-transform: uppercase;
+	z-index: 1;
+}
+
+.creds {
+	font-size: 1rem;
+	font-weight: 500;
+	color: #928080;
+}
+
+.input-group {
+	box-shadow: 0 1px 6.5px -6px black;
 }
 
 .input-group-text {
@@ -175,13 +188,15 @@ img.dog-image {
 
 .form-control {
 	border: none;
+	color: #413e3e;
 }
 
-div.breed-list-container {
+.breed-list-container {
 	position: relative;
-	margin: auto;
-	height: 50px;
-	width: 92%;
+	margin: .25rem auto;
+	height: fit-content;
+	padding: .25rem 0;
+	width: 100%;
 }
 
 div#breed-list {
@@ -207,15 +222,12 @@ form[name="breed-btn-form"] {
 input.breed-btn {
 	display: flex;
 	border: none;
-	align-self: center;
-	justify-self: center;
-	box-shadow: 0px 0px 2px 0.5px rgba(0, 0, 0, 0.2);
-	background-color: #825E5E;
-	padding: 2px 4px 2px 4px;
+	background-color: #7e63631f;
+	padding: 2px 6px;
 	text-decoration: none;
 	font-weight: 300;
 	font-size: small;
-	color: #F8F3F2;
+	color: #444141;
 	border-radius: 10px;
 }
 
@@ -223,27 +235,27 @@ input.breed-btn:hover {
 	filter: brightness(1.1);
 }
 
-div.breed-list-fade-1 {
+.breed-list-fade-1 {
 	position: absolute;
 	top: 0;
 	left: 0;
 	margin-left: -1px;
 	width: 20px;
 	height: 100%;
-	background-image: linear-gradient(to right, #f6f4f4, #f6f4f400);
+	background-image: linear-gradient(to right, #faf9f9, #f6f4f400);
 }
 
-div.breed-list-fade-2 {
+.breed-list-fade-2 {
 	position: absolute;
 	top: 0;
 	right: 0;
 	margin-right: -1px;
 	width: 20px;
 	height: 100%;
-	background-image: linear-gradient(to left, #f6f4f4, #f6f4f400);
+	background-image: linear-gradient(to left, #faf9f9, #f6f4f400);
 }
 
-div.not-found {
+.not-found {
 	width: fit-content;
 	align-self: center;
 	color: gray;

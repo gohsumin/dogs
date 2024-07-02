@@ -1,15 +1,19 @@
-<div class="d-flex flex-column align-items-center gap-4 justify-content-start vh-100">
+<div class="d-flex flex-column align-items-center justify-content-start vh-100">
 	<% include partials/_navbar.html %>
-		<div class="container">
-			<div class="dog-activity-container">
-				<div class="activity">
-					<%= activity %>
-				</div>
-				<div class="breed">
-					<%= breed %>
-				</div>
-				<img class="dog-image" src="<%= image %>">
+		<div class="container flex-column align-items-center">
+			<div class="activity">
+				<%= activity %>
 			</div>
-
+			<div class="d-flex flex-column w-100 h-100 align-items-center gap-4">
+				<div class="dog-image-container">
+					<img class="dog-image" src="<%= image %>">
+					<div class="breed">
+						<%= breed %>
+					</div>
+				</div>
+				<div class="creds">
+					Image from https://dog.ceo/dog-api/ | Advice from https://api.adviceslip.com/
+				</div>
+			</div>
 		</div>
 </div>

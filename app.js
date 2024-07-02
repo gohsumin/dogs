@@ -118,9 +118,9 @@ async function getImage(breed) {
 // return random activity
 async function getActivity() {
     try {
-        const res = await fetch('http://www.boredapi.com/api/activity/');
+        const res = await fetch('https://api.adviceslip.com/advice');
         const json = await res.json();
-        return json.activity;
+        return json.slip.advice;
     }
     catch (err) {
         return "Drink tea";
